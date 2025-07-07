@@ -1,50 +1,43 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Mail, Phone, Send, Github, Linkedin, Twitter } from "lucide-react";
 import { SiTelegram } from "react-icons/si";
 
 export default function Contact() {
+  const form = useRef();
+  const [status, setStatus] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        to_name: "Daniel Ayele",
-      };
-
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
-
-      alert("Message sent successfully!");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch (error) {
-      console.error("EmailJS error:", error);
-      alert("Failed to send message. Please try again later.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    setStatus("pending");
+    emailjs
+      .sendForm(
+        "service_2t9re2o",    // TODO: Replace with your EmailJS service ID
+        "template_8aui3rx",   // TODO: Replace with your EmailJS template ID
+        form.current,
+        "GTTDRyHs5o4WkhVFK"     // TODO: Replace with your EmailJS public key
+      )
+      .then(
+        (result) => {
+          setStatus("success");
+          form.current.reset();
+        },
+        (error) => {
+          setStatus("error");
+        }
+      );
   };
 
   const contactInfo = [
@@ -117,7 +110,7 @@ export default function Contact() {
             <h3 className="text-xl font-semibold mb-6 text-slate-900 dark:text-white">
               Send Message
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={form} onSubmit={sendEmail} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300">
                   Full Name
@@ -174,15 +167,17 @@ export default function Contact() {
               </div>
               <button
                 type="submit"
-                disabled={isSubmitting}
                 className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
               >
                 <div className="flex items-center justify-center gap-2 text-sm font-medium">
                   <Send className="w-4 h-4" />
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {status === "pending" ? "Sending..." : "Send Message"}
                 </div>
               </button>
             </form>
+            {status === "pending" && <p className="text-center text-slate-500 mt-4">Sending...</p>}
+            {status === "success" && <p className="text-center text-green-600 mt-4">Message sent successfully!</p>}
+            {status === "error" && <p className="text-center text-red-600 mt-4">Failed to send message. Please try again.</p>}
           </motion.div>
 
           {/* Contact Info */}

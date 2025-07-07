@@ -51,19 +51,19 @@ export default function Contact() {
     {
       icon: <Mail className="w-5 h-5" />,
       label: "Email",
-      value: "daniel.ayele@example.com",
+      value: "daniel.ayele@anbesg.com",
       color: "bg-blue-100 text-blue-700",
     },
     {
       icon: <Phone className="w-5 h-5" />,
       label: "Phone",
-      value: "+251 9XX XXX XXX",
+      value: "+251 940 685 349",
       color: "bg-green-100 text-green-700",
     },
     {
       icon: <SiTelegram className="w-5 h-5" />,
       label: "Telegram",
-      value: "@danielayele",
+      value: "@Danaye07",
       color: "bg-purple-100 text-purple-700",
     },
   ];

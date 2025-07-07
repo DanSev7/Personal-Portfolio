@@ -1,11 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
 import './index.css'
-import App from './App.jsx'
+import  ThemeProvider  from "./sections/ThemeProvider"; // ✅ correct path to your ThemeProvider.jsx
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* DarkModeProvider can be added here if needed */}
-    <App />
-  </React.StrictMode>,
-)
+    <ThemeProvider> {/* ✅ Wrap here */}
+      <App />
+    </ThemeProvider>
+  </React.StrictMode>
+);

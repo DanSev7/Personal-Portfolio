@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { Github, Linkedin, Twitter, Mail, Download } from "lucide-react";
+import portfolioImg from '../assets/portfolio.jpg'
 
 export default function Hero() {
   const handleHireMe = () => {
@@ -32,9 +33,9 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <div className="space-y-2">
+            <div className="space-y-3">
               <motion.h1
-                className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text dark:text-white text-slate-900 drop-shadow-md"
+                className="text-4xl pb-[8px] md:text-5xl lg:text-6xl font-extrabold text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text dark:text-white text-slate-900 drop-shadow-md"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -138,7 +139,7 @@ export default function Hero() {
           >
             <div className="relative w-80 h-80">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
+                src={portfolioImg}
                 alt="Daniel Ayele - Developer"
                 className="rounded-full object-cover w-full h-full border-4 border-white dark:border-slate-700 shadow-2xl z-10 relative"
               />

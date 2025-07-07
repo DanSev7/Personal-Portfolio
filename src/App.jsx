@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "./sections/Hero";
-import Header from "./components/Header";
+// import Header from "./components/Header";
+import Navigation from "./components/Navigation";
 import About from "./sections/About";
 import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
@@ -11,7 +12,8 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-      <Header />
+      {/* <Header /> */}
+      <Navigation />
       {/* Hero Section */}
       <Hero />
       {/* About Section */}

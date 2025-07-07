@@ -64,17 +64,17 @@ export default function Contact() {
   const socialLinks = [
     {
       icon: <Github className="w-5 h-5" />,
-      href: "https://github.com",
+      href: "https://github.com/DanSev7",
       label: "GitHub",
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/daniel-ayele-105a37289/",
       label: "LinkedIn",
     },
     {
       icon: <Twitter className="w-5 h-5" />,
-      href: "https://twitter.com",
+      href: "https://x.com/DanielAyel21507",
       label: "Twitter",
     },
   ];

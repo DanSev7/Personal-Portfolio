@@ -104,7 +104,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 1.0 }}
             >
               <a
-                href="https://github.com"
+                href="https://github.com/DanSev7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition"
@@ -112,7 +112,7 @@ export default function Hero() {
                 <Github className="w-6 h-6" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/daniel-ayele-105a37289/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition"
@@ -120,7 +120,7 @@ export default function Hero() {
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/DanielAyel21507"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition"

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Moon, Sun, Menu, X } from "lucide-react";
-import useTheme from "../sections/ThemeContext";
+import { Menu, X } from "lucide-react";
+// import useDarkMode from "../hooks/useDarkMode";
 
 // Simple modern SVG logo component
 function Logo() {
@@ -26,7 +26,7 @@ function Logo() {
 }
 
 export default function Navigation() {
-  const { theme, toggleTheme } = useTheme();
+  // const [dark, setDark] = useDarkMode();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -86,20 +86,8 @@ export default function Navigation() {
           ))}
         </ul>
 
-        {/* Theme Toggle & Mobile Menu Button */}
+        {/* Mobile Menu Button */}
         <div className="flex items-center gap-3 ml-4">
-          <button
-            onClick={toggleTheme}
-            className="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? (
-              <Sun className="w-5 h-5 text-yellow-400" />
-            ) : (
-              <Moon className="w-5 h-5 text-slate-800" />
-            )}
-          </button>
-
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition"

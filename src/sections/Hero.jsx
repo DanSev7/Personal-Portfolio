@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { Github, Linkedin, Twitter, Mail, Download } from "lucide-react";
-import portfolioImg from '../assets/portfolio.jpg'
+// import portfolioImg from '../assets/portfolio.jpg'
 
 export default function Hero() {
   const handleHireMe = () => {
@@ -139,7 +139,7 @@ export default function Hero() {
           >
             <div className="relative w-80 h-80">
               <img
-                src={portfolioImg}
+                src='./portfolio.JPG'
                 alt="Daniel Ayele - Developer"
                 className="rounded-full object-cover w-full h-full border-4 border-white dark:border-slate-700 shadow-2xl z-10 relative"
               />

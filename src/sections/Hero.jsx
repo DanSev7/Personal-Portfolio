@@ -22,7 +22,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="bg-slate-50 dark:bg-slate-900 py-20 lg:py-32"
+      className="bg-slate-50 dark:bg-slate-900 py-20 lg:py-32 px-4"
     >
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -35,7 +35,7 @@ export default function Hero() {
           >
             <div className="space-y-3">
               <motion.h1
-                className="text-4xl pb-[8px] md:text-5xl lg:text-6xl font-extrabold text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text dark:text-white text-slate-900 drop-shadow-md"
+                className="text-4xl pb-[8px] md:text-5xl lg:text-6xl font-extrabold text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-slate-900 drop-shadow-md"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}

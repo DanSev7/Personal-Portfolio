@@ -89,7 +89,7 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-16 lg:py-24 bg-slate-50 dark:bg-slate-900">
+    <section id="skills" className="py-16 lg:py-24 bg-slate-50 dark:bg-slate-900 px-4">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="max-w-6xl mx-auto">
           <motion.div

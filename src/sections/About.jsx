@@ -4,7 +4,7 @@ import { Code, Users, Rocket } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="py-16 lg:py-24 bg-white dark:bg-slate-800">
+    <section id="about" className="py-16 lg:py-24 bg-white dark:bg-slate-800 px-4">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="max-w-4xl mx-auto">
           <motion.div

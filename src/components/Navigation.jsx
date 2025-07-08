@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useDarkMode } from '../context/ThemeContext';
+import { FaMoon, FaSun } from 'react-icons/fa';
 // import useDarkMode from "../hooks/useDarkMode";
 
 // Simple modern SVG logo component
@@ -29,6 +31,7 @@ export default function Navigation() {
   // const [dark, setDark] = useDarkMode();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { darkMode, setDarkMode } = useDarkMode();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -86,7 +89,7 @@ export default function Navigation() {
           ))}
         </ul>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button and Dark Mode Toggle */}
         <div className="flex items-center gap-3 ml-4">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -94,6 +97,14 @@ export default function Navigation() {
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+          {/* Dark Mode Toggle Button */}
+          <button
+            onClick={() => setDarkMode(prev => !prev)}
+            className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-yellow-400 transition"
+            aria-label="Toggle dark mode"
+          >
+            {darkMode ? <FaSun className="w-5 h-5" /> : <FaMoon className="w-5 h-5" />}
           </button>
         </div>
       </nav>

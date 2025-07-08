@@ -56,7 +56,7 @@ export default function Footer() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-bold text-white mb-4">Daniel Ayele</h3>
+            <h3 className="text-xl font-bold text-white mb-4"><a href="/#home">Daniel Ayele</a></h3>
             <p className="text-slate-400 mb-4 max-w-md">
               Full Stack Developer passionate about creating innovative web and mobile solutions that make a difference.
             </p>

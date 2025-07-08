@@ -80,7 +80,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-16 lg:py-24 bg-slate-50 dark:bg-slate-900">
+    <section id="contact" className="py-16 lg:py-24 bg-slate-50 dark:bg-slate-900 px-4">
       <div className="container mx-auto px-4 max-w-5xl">
         <motion.div
           className="text-center mb-16"

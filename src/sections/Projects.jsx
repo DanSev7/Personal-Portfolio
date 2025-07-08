@@ -51,7 +51,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-16 lg:py-24 bg-white dark:bg-slate-900">
+    <section id="projects" className="py-16 lg:py-24 bg-white dark:bg-slate-900 px-4">
       <div className="container mx-auto px-4 max-w-7xl">
         <motion.div
           className="text-center mb-16"

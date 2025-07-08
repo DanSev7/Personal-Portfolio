@@ -138,7 +138,7 @@ export default function Skills() {
                       }}
                       viewport={{ once: true }}
                     >
-                      <span className="flex items-center gap-2 text-slate-700 text-md dark:text-slate-300">
+                      <span className="flex items-center gap-2 text-slate-700 text-lg dark:text-slate-300">
                         {skill.icon}
                         {skill.name}
                       </span>

@@ -81,7 +81,7 @@ export default function Navigation() {
             <li key={item.href}>
               <button
                 onClick={() => handleNavClick(item.href)}
-                className="text-slate-700 dark:text-slate-200 hover:text-indigo-600 transition-colors"
+                className="text-slate-700 dark:text-slate-200 hover:text-indigo-600 transition-colors cursor-pointer"
               >
                 {item.label}
               </button>
@@ -101,7 +101,7 @@ export default function Navigation() {
           {/* Dark Mode Toggle Button */}
           <button
             onClick={() => setDarkMode(prev => !prev)}
-            className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-yellow-400 transition"
+            className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-yellow-400 transition cursor-pointer"
             aria-label="Toggle dark mode"
           >
             {darkMode ? <FaSun className="w-5 h-5" /> : <FaMoon className="w-5 h-5" />}

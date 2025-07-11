@@ -15,14 +15,14 @@ export default function Experience() {
       ],
     },
     {
-      title: "Junior Software Developer",
-      company: "Tech Solutions Inc.",
-      period: "2021 - 2022",
+      title: "Web Developer Internship",
+      company: "National ID Ethiopia | NID",
+      period: "2023 - 2024",
       responsibilities: [
-        "Contributed to the development of enterprise web applications using React.js and Node.js",
-        "Participated in agile development processes and code reviews",
-        "Assisted in database design and optimization using PostgreSQL",
-        "Maintained and updated existing codebases while implementing new features",
+        "Applied and expanded technical skills through hands-on work on impactful, real-world projects.",
+        "Collaborated with experienced professionals, gaining valuable industry insights.",
+        "Enhanced understanding of how technology addresses real-world challenges.",
+        "Significantly improved both technical expertise and practical problem-solving abilities."
       ],
     },
   ];

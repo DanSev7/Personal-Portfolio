@@ -33,7 +33,28 @@ export default function Navigation() {
   // const [dark, setDark] = useDarkMode();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { darkMode, setDarkMode } = useDarkMode();
+  // const { darkMode, setDarkMode } = useDarkMode();
+
+  const [darkMode, setDarkMode] = useState(() => {
+    if (typeof window !== "undefined") {
+      return (
+        localStorage?.getItem("theme") === "dark" ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches &&
+          !localStorage?.getItem("theme"))
+      );
+    }
+    return false;
+  });
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark");
+      localStorage?.setItem("theme", "dark");
+    } else {
+      document.body.classList.remove("dark");
+      localStorage?.setItem("theme", "light");
+    }
+  }, [darkMode]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);

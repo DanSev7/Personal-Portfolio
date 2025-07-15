@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { useDarkMode } from '../context/ThemeContext';
-import { FaMoon, FaSun } from 'react-icons/fa';
+import {motion } from 'framer-motion';
+
+// import { FaMoon, FaSun } from 'react-icons/fa';
 // import useDarkMode from "../hooks/useDarkMode";
 
 // Simple modern SVG logo component
@@ -99,13 +101,45 @@ export default function Navigation() {
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
           {/* Dark Mode Toggle Button */}
-          <button
+          {/* <button
             onClick={() => setDarkMode(prev => !prev)}
             className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-yellow-400 transition cursor-pointer"
             aria-label="Toggle dark mode"
-          >
-            {darkMode ? <FaSun className="w-5 h-5" /> : <FaMoon className="w-5 h-5" />}
-          </button>
+          > */}
+          <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              onClick={toggleDarkMode}
+              className="relative ml-4 p-3 rounded-full bg-gradient-to-r from-yellow-100 to-yellow-200 dark:from-gray-800 dark:to-gray-700 hover:from-yellow-200 hover:to-yellow-300 dark:hover:from-gray-700 dark:hover:to-gray-600 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl group"
+              aria-label="Toggle dark mode"
+            >
+            <AnimatePresence mode="wait">
+                {darkMode ? (
+                  <motion.div
+                    key="sun-mobile"
+                    initial={{ rotate: -180, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 180, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Sun className="text-yellow-600 w-5 h-5" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="moon-mobile"
+                    initial={{ rotate: 180, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -180, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Moon className="text-yellow-600 w-5 h-5" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            {/* {darkMode ? <FaSun className="w-5 h-5" /> : <FaMoon className="w-5 h-5" />} */}
+          {/* </button> */}
+          </motion.button>
         </div>
       </nav>
 

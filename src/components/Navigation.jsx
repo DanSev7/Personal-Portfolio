@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
-import { useDarkMode } from '../context/ThemeContext';
-import {motion } from 'framer-motion';
+// import { useDarkMode } from '../context/ThemeContext';
+import {motion, AnimatePresence } from 'framer-motion';
 
 // import { FaMoon, FaSun } from 'react-icons/fa';
 // import useDarkMode from "../hooks/useDarkMode";
@@ -61,6 +61,8 @@ export default function Navigation() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  const toggleDarkMode = () => setDarkMode((prev) => !prev);
+
 
   const navItems = [
     { href: "#home", label: "Home" },
@@ -135,32 +137,32 @@ export default function Navigation() {
               className="relative ml-4 p-3 rounded-full bg-gradient-to-r from-yellow-100 to-yellow-200 dark:from-gray-800 dark:to-gray-700 hover:from-yellow-200 hover:to-yellow-300 dark:hover:from-gray-700 dark:hover:to-gray-600 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl group"
               aria-label="Toggle dark mode"
             >
-            <AnimatePresence mode="wait">
+              <AnimatePresence mode="wait">
                 {darkMode ? (
                   <motion.div
-                    key="sun-mobile"
+                    key="sun"
                     initial={{ rotate: -180, opacity: 0 }}
                     animate={{ rotate: 0, opacity: 1 }}
                     exit={{ rotate: 180, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <Sun className="text-yellow-600 w-5 h-5" />
+                    <Sun className="text-yellow-600 w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                   </motion.div>
                 ) : (
                   <motion.div
-                    key="moon-mobile"
+                    key="moon"
                     initial={{ rotate: 180, opacity: 0 }}
                     animate={{ rotate: 0, opacity: 1 }}
                     exit={{ rotate: -180, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <Moon className="text-yellow-600 w-5 h-5" />
+                    <Moon className="text-yellow-600 w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                   </motion.div>
                 )}
               </AnimatePresence>
+            </motion.button>
             {/* {darkMode ? <FaSun className="w-5 h-5" /> : <FaMoon className="w-5 h-5" />} */}
           {/* </button> */}
-          </motion.button>
         </div>
       </nav>
 
